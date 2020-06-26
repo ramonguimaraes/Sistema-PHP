@@ -41,9 +41,22 @@ $routes->get('/clients/(:num)', 'Clients::details/$1');
 
 //rotas de administracao
 $routes->add('/admin', 'Admin\Admin::index');
-$routes->add('/admin/logout', 'Admin\Admin::logout');
 
+$routes->add('/admin/logout', 'Admin\Admin::logout');
 $routes->add('/admin/validate-login', 'Admin\Users::validateLogin');
+
+$routes->add('/admin/clients/details/(:num)', 'Admin\Clients::details/$1');
+
+$routes->add('/admin/clients', 'Admin\Clients::index');
+
+$routes->add('/admin/clients/insert', 'Admin\Clients::insert');
+$routes->add('/admin/clients/insert-action', 'Admin\Clients::insertAction');
+
+$routes->add('/admin/clients/update/(:num)', 'Admin\Clients::update/$1');
+$routes->add('/admin/clients/update-action/(:num)', 'Admin\Clients::updateAction/$1');
+
+$routes->add('/admin/clients/delete/(:num)', 'Admin\Clients::delete/$1');
+
 
 /**
  * --------------------------------------------------------------------

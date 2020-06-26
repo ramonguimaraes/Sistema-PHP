@@ -3,7 +3,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\ClientsModel;
 
-class Clients extends BaseController
+class Clients extends Controller
 {
 	public function index()
 	{
