@@ -96,5 +96,20 @@ class Clients extends Controller
         return redirect()->to(base_url('admin/clients'));
 
     }
-	
+    
+    public function search()
+    {
+        $clients = new ClientsModel;
+        $keyword = $this->request->getVar('keyword');
+
+        $data = [
+            'title' => 'Lista de Clientes',
+            'clients' => $clients->search($keyword)
+        ];
+
+        echo view('admin/templates/header');
+		echo view('admin/clients/list', $data);
+        echo view('admin/templates/footer');
+ 
+    }
 }
