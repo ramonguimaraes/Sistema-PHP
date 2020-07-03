@@ -37,7 +37,7 @@ $routes->get('/products', 'Site::view/products');
 $routes->get('/about', 'Site::view/about');
 
 $routes->get('/clients/(:num)', 'Clients::details/$1');
-
+$routes->get('/api/clients', 'Api\Clients::index');
 
 //rotas de administracao
 $routes->add('/admin', 'Admin\Admin::index');
